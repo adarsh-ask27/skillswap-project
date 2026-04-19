@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SkillSwap Ultimate</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- LOGIN -->
+
+<div id="authPage" class="login">
+
+<div class="bg">
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<div class="mesh"></div>
+
+</div>
+
+
+<div class="login-card">
+
+<h2 id="formTitle">Login</h2>
+
+
+<input type="text" id="email" placeholder="Email">
+
+<input type="text" id="username" placeholder="Username">
+
+
+<div class="password-wrap">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="togglePassword()">👁</button>
+
+</div>
+
+
+<div id="confirmDiv" style="display:none">
+
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+</div>
+
+
+<div class="strength">
+
+<div id="strengthBar"></div>
+
+</div>
+
+
+<label>
+
+<input type="checkbox" id="remember">
+
+Remember me
+
+</label>
+
+
+<p id="loginMsg"></p>
+
+
+<button onclick="handleAuth()">Submit</button>
+
+
+<p class="switch" onclick="switchMode()">
+
+Switch to Signup
+
+</p>
+
+
+</div>
+
+</div>
+
+
+
+<!-- MAIN WEBSITE -->
+
+<div id="mainPage" style="display:none">
+
+
+<header>
+
+<h1>SkillSwap</h1>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#services">Services</a>
+
+<a href="#dashboard">Dashboard</a>
+
+<a href="#contact">Contact</a>
+
+<button onclick="logout()">Logout</button>
+
+</nav>
+
+</header>
+
+
+
+<!-- hero -->
+
+<section class="hero">
+
+<h2>Exchange Skills Without Money</h2>
+
+<p>Learn faster by teaching others</p>
+
+</section>
+
+
+
+<!-- about -->
+
+<section id="about" class="about-advanced">
+
+<h2 class="about-title">About SkillSwap</h2>
+
+<p class="about-description">
+
+SkillSwap is an innov ative skill exchange platform that enables people to learn and teach skills without financial barriers. 
+The platform promotes collaborative learning by allowing users to share knowledge and develop new skills through mutual exchange.
+
+SkillSwap encourages community-driven education where individuals can grow together and support each other's learning journey.
+
+</p>
+
+
+<div class="about-container">
+
+
+<div class="about-box">
+
+<h3>🎯 Mission</h3>
+
+<p>
+
+Our mission is to make learning accessible and affordable by enabling people to exchange skills instead of paying for expensive courses.
+
+</p>
+
+</div>
+
+
+
+<div class="about-box">
+
+<h3>🔮 Vision</h3>
+
+<p>
+
+We aim to build a global community where knowledge sharing becomes the primary way of learning and personal growth.
+
+</p>
+
+</div>
+
+
+
+<div class="about-box">
+
+<h3>❗ Problem</h3>
+
+<p>
+
+Many individuals want to learn new skills but cannot afford professional training. At the same time, many skilled individuals do not have a platform to share their expertise easily.
+
+SkillSwap bridges this gap.
+
+</p>
+
+</div>
+
+
+
+<div class="about-box">
+
+<h3>⭐ Key Features</h3>
+
+<ul>
+
+<li>Skill exchange without money</li>
+
+<li>User profile creation</li>
+
+<li>Skill matching logic</li>
+
+<li>Search and filter skills</li>
+
+<li>Interactive dashboard</li>
+
+<li>Modern UI design</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="about-box">
+
+<h3>💻 Technologies</h3>
+
+<p>
+
+HTML for structure  
+CSS for styling and animations  
+JavaScript for functionality  
+LocalStorage for saving data  
+
+</p>
+
+</div>
+
+
+
+<div class="about-box">
+
+<h3>🚀 Future Scope</h3>
+
+<p>
+
+SkillSwap can be extended with AI-based skill recommendation, real-time chat system, mobile application, database integration, and certification system.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- SVG WAVE DIVIDER -->
+<div class="wave">
+<svg viewBox="0 0 1440 320">
+<path fill="#0f2027" fill-opacity="1"
+d="M0,96L48,122.7C96,149,192,203,288,202.7C384,203,480,149,576,117.3C672,85,768,75,864,101.3C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160V320H0Z">
+</path>
+</svg>
+</div>
+
+
+
+<!-- TIMELINE -->
+<section class="timeline">
+
+<h2>Project Journey</h2>
+
+<div class="timeline-container">
+
+<div class="timeline-item">
+<h3>Idea</h3>
+<p>Concept of skill exchange platform</p>
+</div>
+
+<div class="timeline-item">
+<h3>Design</h3>
+<p>Modern UI & UX planning</p>
+</div>
+
+<div class="timeline-item">
+<h3>Development</h3>
+<p>HTML CSS JS implementation</p>
+</div>
+
+<div class="timeline-item">
+<h3>Testing</h3>
+<p>Debugging & improvements</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- COUNTERS -->
+<section class="stats">
+
+<div class="counter">
+<h2 data-target="150">0</h2>
+<p>Users</p>
+</div>
+
+<div class="counter">
+<h2 data-target="320">0</h2>
+<p>Skills</p>
+</div>
+
+<div class="counter">
+<h2 data-target="95">0</h2>
+<p>Matches</p>
+</div>
+
+</section>
+
+
+
+<!-- INFOGRAPHICS -->
+<section class="infographic">
+
+<h2>Platform Benefits</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>Faster Learning</h3>
+</div>
+
+<div class="info-card">
+<h3>Community Growth</h3>
+</div>
+
+<div class="info-card">
+<h3>Zero Cost</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- services -->
+
+<section id="services">
+
+<h2>Services</h2>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<h3>Skill Exchange</h3>
+
+<p>Trade skills without money</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>Learning Community</h3>
+
+<p>Connect with learners</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>Profile Matching</h3>
+
+<p>Find best skill partners</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- dashboard -->
+
+<section id="dashboard">
+
+
+<h2>Create Skill Profile</h2>
+
+
+<div class="form-grid">
+
+<input id="name" placeholder="Your name">
+
+<input id="offer" placeholder="Skill you OFFER">
+
+<input id="want" placeholder="Skill you WANT">
+
+
+<select id="category">
+
+<option>Programming</option>
+
+<option>Design</option>
+
+<option>Music</option>
+
+<option>Language</option>
+
+<option>Marketing</option>
+
+</select>
+
+
+<select id="level">
+
+<option>Beginner</option>
+
+<option>Intermediate</option>
+
+<option>Expert</option>
+
+</select>
+
+
+<input type="file" id="photo">
+
+
+<textarea id="bio" placeholder="Write short bio about your skills"></textarea>
+
+
+<select id="availability">
+
+<option value="">Availability</option>
+
+<option>Weekends</option>
+
+<option>Weekdays</option>
+
+<option>Evenings</option>
+
+<option>Flexible</option>
+
+</select>
+
+
+<select id="mode">
+
+<option value="">Learning Mode</option>
+
+<option>Online</option>
+
+<option>Offline</option>
+
+<option>Both</option>
+
+</select>
+
+
+<input
+
+type="url"
+
+id="portfolio"
+
+placeholder="Portfolio link (GitHub / LinkedIn)"
+
+>
+
+
+
+<button onclick="addProfile()">Add Profile</button>
+
+
+</div>
+
+
+
+<div class="controls">
+
+<input placeholder="Search skill" onkeyup="searchSkill()" id="search">
+
+
+<select onchange="filterCategory()" id="filterCategory">
+
+<option value="">All</option>
+
+<option>Programming</option>
+
+<option>Design</option>
+
+<option>Music</option>
+
+<option>Language</option>
+
+<option>Marketing</option>
+
+</select>
+
+
+</div>
+
+
+
+<h2>Profiles</h2>
+
+<div id="output" class="grid"></div>
+
+
+<h2>Best Matches</h2>
+
+<div id="matches" class="grid"></div>
+
+
+</section>
+
+
+<div class="share-box">
+
+<h3>Share Skills</h3>
+
+
+<textarea id="skillPost"
+
+placeholder="Share explanation or notes">
+
+</textarea>
+
+
+<input type="file" id="skillFile">
+
+
+<input
+
+type="url"
+
+id="meetingLink"
+
+placeholder="Meeting link (Google Meet)"
+
+>
+
+
+<div class="video-section">
+
+<h3>Video Lesson</h3>
+
+
+<input
+
+type="url"
+
+id="videoLink"
+
+placeholder="Paste YouTube link"
+
+>
+
+
+<button onclick="loadVideo()">
+
+Load Video
+
+</button>
+
+
+<div class="video-container">
+
+<iframe
+
+id="videoFrame"
+
+frameborder="0"
+
+allowfullscreen>
+
+</iframe>
+
+
+
+
+<button onclick="shareSkill()">
+
+Share
+
+</button>
+
+</div>
+<div id="sharedContent"></div>
+
+
+</div>
+
+
+<div class="learning-box">
+
+<h3>Learning Progress</h3>
+
+
+<div class="progress-container">
+
+<div id="progressBar"></div>
+
+</div>
+
+
+<p id="progressText">
+
+0% completed
+
+</p>
+
+
+
+<h3>Lessons</h3>
+
+
+<div class="lesson-list">
+
+
+<label>
+
+<input type="checkbox" onchange="updateProgress()">
+
+Introduction
+
+</label>
+
+
+<label>
+
+<input type="checkbox" onchange="updateProgress()">
+
+Basic Concepts
+
+</label>
+
+
+<label>
+
+<input type="checkbox" onchange="updateProgress()">
+
+Practical Example
+
+</label>
+
+
+<label>
+
+<input type="checkbox" onchange="updateProgress()">
+
+Mini Project
+
+</label>
+
+
+<label>
+
+<input type="checkbox" onchange="updateProgress()">
+
+Final Assessment
+
+</label>
+
+
+</div>
+
+
+
+<button onclick="generateCertificate()">
+
+Get Certificate
+
+</button>
+
+
+<div id="certificateBox"></div>
+
+
+</div>
+
+
+<!-- chat UI -->
+
+<section>
+
+<h2>Chat Demo</h2>
+
+<div class="chat-box">
+
+<div id="chatMessages"></div>
+
+<input id="chatInput" placeholder="type message">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+
+<div class="footer-col">
+
+<h2 class="footer-logo">SkillSwap</h2>
+
+<p>
+
+A modern platform to exchange skills, collaborate, and grow together without financial barriers.
+
+</p>
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<p>Email: pandeyaadarsh471@gmail.com</p>
+
+<p>Phone: +91 9798569678</p>
+
+<p>India</p>
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Follow Us</h3>
+
+<div class="social-icons">
+
+<a class="icon" href = "https://www.linkedin.com/in/adarsh-pandey-69a012293" target="_blank">LinkedIn</a>
+
+<a class="icon" href= "https://www.github.com/adarsh-ask27" target="_blank">GitHub</a>
+
+<a class="icon" href= "https://www.instgram.com/1388.adarsh" target="_blank">Instagram</a>
+
+<a class="icon">Twitter</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p>© 2026 SkillSwap | Final Year Project</p>
+<button onclick="scrollTopBtn()" class="top-btn">
+↑
+</button>
+
+</div>
+
+</footer>
+
+
+<!-- WAVE ABOVE FOOTER -->
+
+<div class="footer-wave">
+
+<svg viewBox="0 0 1440 320">
+
+<path fill="#0f2027" fill-opacity="1"
+
+d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,170.7C672,203,768,245,864,240C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192V320H0Z">
+
+</path>
+
+</svg>
+
+</div>
+
+
+
+<footer class="footer">
+
+
+<div class="footer-container">
+
+
+<div class="footer-col">
+
+<h2 class="footer-logo">SkillSwap</h2>
+
+<p>
+
+Exchange skills, grow together, and learn without financial barriers.
+
+</p>
+
+
+<div class="newsletter">
+
+<input placeholder="Enter email">
+
+<button>Subscribe</button>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Navigation</h3>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<p>Email: pandeyaadarsh47@gmail.com</p>
+
+<p>Phone: +91 9798569678</p>
+
+<p>India</p>
+
+</div>
+
+
+
+<div class="footer-col">
+
+<h3>Follow Us</h3>
+
+
+<div class="social-icons">
+
+
+<a>
+
+<svg viewBox="0 0 24 24">
+
+<path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM8 17V10H6V17H8ZM7 8.7A1.2 1.2 0 1 0 7 6.3A1.2 1.2 0 0 0 7 8.7ZM18 17V13C18 11 17 10 15.5 10C14.6 10 14 10.5 13.7 11V10H12V17H14V13.5C14 12.6 14.4 12 15.3 12C16.2 12 16.5 12.7 16.5 13.6V17H18Z"/>
+
+</svg>
+
+</a>
+
+
+
+<a>
+
+<svg viewBox="0 0 24 24">
+
+<path d="M12 0C5.4 0 0 5.4 0 12C0 17.3 3.4 21.8 8.2 23.4C8.8 23.5 9 23.1 9 22.8V20.6C5.7 21.3 5 19.2 5 19.2C4.5 17.9 3.8 17.6 3.8 17.6C2.7 16.8 3.9 16.8 3.9 16.8C5.1 16.9 5.7 18.1 5.7 18.1C6.8 19.9 8.5 19.3 9.2 19C9.3 18.2 9.6 17.7 9.9 17.4C7.2 17.1 4.3 16.1 4.3 11.5C4.3 10.2 4.8 9.2 5.6 8.4C5.5 8.1 5.1 7 5.7 5.5C5.7 5.5 6.7 5.2 9 6.8C9.9 6.5 10.9 6.4 12 6.4C13.1 6.4 14.1 6.5 15 6.8C17.3 5.2 18.3 5.5 18.3 5.5C18.9 7 18.5 8.1 18.4 8.4C19.2 9.2 19.7 10.2 19.7 11.5C19.7 16.1 16.8 17.1 14.1 17.4C14.5 17.7 14.8 18.3 14.8 19.2V22.8C14.8 23.1 15 23.6 15.6 23.4C20.4 21.8 24 17.3 24 12C24 5.4 18.6 0 12 0Z"/>
+
+</svg>
+
+</a>
+
+
+
+<a>
+
+<svg viewBox="0 0 24 24">
+
+<path d="M7 2C4.2 2 2 4.2 2 7V17C2 19.8 4.2 22 7 22H17C19.8 22 22 19.8 22 17V7C22 4.2 19.8 2 17 2H7ZM12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17ZM18 6.5C18 7.3 17.3 8 16.5 8C15.7 8 15 7.3 15 6.5C15 5.7 15.7 5 16.5 5C17.3 5 18 5.7 18 6.5Z"/>
+
+</svg>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p>© 2026 SkillSwap | Final Year Project</p>
+
+<button onclick="scrollTopBtn()" class="top-btn">
+
+↑
+
+</button>
+
+</div>
+
+
+</footer>
+</div>
+
+
+
+<div id="profileModal" class="modal">
+
+<div class="modal-content">
+
+
+<span class="close" onclick="closeModal()">×</span>
+
+
+<div id="modalBody"></div>
+
+
+</div>
+
+</div>
+
+<button id="progressBtn">
+
+<svg class="progress-ring" width="60" height="60">
+
+<circle
+cx="30"
+cy="30"
+r="26"
+stroke-width="4"
+/>
+
+</svg>
+
+<span>↑</span>
+
+</button>x
+
+<script src="script.js"></script>
+
+</body>
+
+
+</html>
