@@ -1119,3 +1119,57 @@ let embed = link.replace("watch?v=","embed/")
 document.getElementById("videoFrame").src = embed
 
 }
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+let counters = document.querySelectorAll(".counter")
+let started = false
+
+window.addEventListener("scroll",()=>{
+
+let section = document.querySelector(".stats-advanced")
+
+if(!section) return
+
+if(started) return
+
+let position = section.getBoundingClientRect().top
+
+if(position < window.innerHeight - 100){
+
+started = true
+
+counters.forEach(counter=>{
+
+let target = +counter.getAttribute("data-target")
+let count = 0
+
+let update = ()=>{
+
+let increment = target / 100
+
+if(count < target){
+
+count += increment
+counter.innerText = Math.ceil(count)
+
+setTimeout(update,20)
+
+}else{
+
+counter.innerText = target + "+"
+
+}
+
+}
+
+update()
+
+})
+
+}
+
+})
+
+})
+
